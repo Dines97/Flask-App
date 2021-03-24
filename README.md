@@ -32,3 +32,18 @@ For my tests, I used the following command. Attention, when using in other condi
 ```bash
 curl --X POST --header "Content-Type: application/json" --data '<JSON DATA TO POST>' http://localhost:<DESIRED PORT>/alert
 ```
+### GKE and fourth task
+For the fourth task, I chose to use Ingress. As far as I know Ingress uses Nginx for its work. Perhaps this is not the right decision, but that was new to me. So I wanted to put it into practice.
+
+For tests, I am using minikube. The API for Ingress in minikube and APi for Ingress in GKE are slightly different. So I have supplied two .yaml files for two different situations. It is possible that when using my project on a different cloud platform, you will need to change the yaml file again.
+
+Also, the WEBHOOK_URL environment variable is specified in the replication-set.yaml file, which may also need to be changed.
+
+In order to deploy my application to GKE, need to execute the following commands.
+```bash
+kubectl apply -f ./k8s/replication-set.yaml -f ./load-balancer.yaml -f ./k8s/ingress-gke.yaml
+```
+In the case of ingress, the connection is made through port 80
+
+### Deployed application
+I have deployed the application to GKE. IP address 34.120.21.32. Example usage. http://34.120.21.32/whoami?firstname=Denis&lastname=Kaynar
