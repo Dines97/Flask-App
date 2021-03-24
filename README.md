@@ -41,7 +41,7 @@ Also, the WEBHOOK_URL environment variable is specified in the replication-set.y
 
 In order to deploy my application to GKE, need to execute the following commands.
 ```bash
-kubectl apply -f ./k8s/replication-set.yaml -f ./load-balancer.yaml -f ./k8s/ingress-gke.yaml
+kubectl apply -f ./k8s/replication-set.yaml -f ./k8s/load-balancer.yaml -f ./k8s/ingress-gke.yaml
 ```
 In the case of ingress, the connection is made through port 80
 
