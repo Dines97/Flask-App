@@ -30,7 +30,7 @@ sudo docker run --name <CONTAINER NAME> --env WEBHOOK_URL=<WEBHOOK URL> -p <DESI
 ### POST request
 For my tests, I used the following command. Attention, when using in other conditions than mine, you may need to change localhost to something else.
 ```bash
-curl --X POST --header "Content-Type: application/json" --data '<JSON DATA TO POST>' http://localhost:<DESIRED PORT>/alert
+curl -X POST --header "Content-Type: application/json" --data '<JSON DATA TO POST>' http://localhost:<DESIRED PORT>/alert
 ```
 ### GKE and fourth task
 For the fourth task, I chose to use Ingress. As far as I know Ingress uses Nginx for its work. Perhaps this is not the right decision, but that was new to me. So I wanted to put it into practice.
