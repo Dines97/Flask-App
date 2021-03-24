@@ -15,3 +15,7 @@ spec:
       containers:
       - name: flask
         image: dines97/flask-app:latest
+        # webhook.site url to use in /alert
+        env:
+        - name: WEBHOOK_URL
+          value: "https://webhook.site/e00fd68e-feb5-4ddf-ab19-f1804c83b8d2"
