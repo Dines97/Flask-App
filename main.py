@@ -26,8 +26,8 @@ def whoami():
 def alert():
     if request.is_json:
         requests.post(url, headers={'Content-Type': 'application/json'}, json=request.get_json())
-    else:
-        return 'Bad Request', 400
+
+    return 'Bad Request', 400
 
 
 if __name__ == "__main__":
